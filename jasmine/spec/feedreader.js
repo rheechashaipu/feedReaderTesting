@@ -32,10 +32,10 @@ $(function() {
          * and that the URL is not empty.
          */
          it('allFeeds objects have URLs that are defined and not empty', function(){
-            for(var i=0; i<allFeeds.length; i++){
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url.length).not.toBe(0);
-            }
+            allFeeds.forEach(function(feed){
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
+            });
          });
 
 
@@ -45,17 +45,17 @@ $(function() {
          */
 
          it('allFeeds objects have defined names and are not empty', function(){
-            for(var i=0; i<allFeeds.length; i++){
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name.length).not.toBe(0);
-            }
+            allFeeds.forEach(function(feed){
+                expect(feed.name).toBeDefined();
+                expect(feed.name.length).not.toBe(0);
+            });
          });
     });
 
 
     /* TODO: Write a new test suite named "The menu" */
 
-    describe("The menu", function(){
+  /*  describe("The menu", function(){
 
          it('Menu should be hidden by default', function(){
             expect(document.body.className).toBe("menu-hidden");
@@ -86,6 +86,23 @@ $(function() {
           */
 
     /* TODO: Write a new test suite named "Initial Entries" */
+
+ /*   describe("Initial Entries", function(){
+
+        beforeEach(function(done){
+            console.log($(".feed").children.length);
+            init();
+            console.log($(".feed").children.length);
+
+            done();
+        });
+        it('At least a single .entry element is within the .feed container', function(done){
+            expect($(".feed").length).toBe(1);
+            console.log($(".feed").length);
+            done();
+
+        });
+    });
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
