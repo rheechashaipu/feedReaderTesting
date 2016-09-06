@@ -58,12 +58,16 @@ $(function() {
     describe("The menu", function(){
 
          it('Menu should be hidden by default', function(){
-            expect(document.body.className === "menu-hidden").toBe(true);
+            expect(document.body.className).toBe("menu-hidden");
          });
 
          it('Menu changes visibility when clicked.', function(){
-            
-
+            $(".menu-icon-link").trigger("click");
+            //console.log(document.body.className);
+            expect(document.body.className).toBe("");
+            $(".menu-icon-link").trigger("click");
+            //console.log(document.body.className);
+            expect(document.body.className).toBe("menu-hidden");
          });
 
     });
