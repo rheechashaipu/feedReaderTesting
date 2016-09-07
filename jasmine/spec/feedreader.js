@@ -55,7 +55,7 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
 
-  /*  describe("The menu", function(){
+    describe("The menu", function(){
 
          it('Menu should be hidden by default', function(){
             expect(document.body.className).toBe("menu-hidden");
@@ -87,20 +87,22 @@ $(function() {
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
- /*   describe("Initial Entries", function(){
+
+    /* TODO: Write a test that ensures when the loadFeed
+    * function is called and completes its work, there is at least
+    * a single .entry element within the .feed container.
+    * Remember, loadFeed() is asynchronous so this test will require
+    * the use of Jasmine's beforeEach and asynchronous done() function.
+    */
+
+    describe("Initial Entries", function(){
 
         beforeEach(function(done){
-            console.log($(".feed").children.length);
-            init();
-            console.log($(".feed").children.length);
-
-            done();
+            loadFeed(0, done);
         });
         it('At least a single .entry element is within the .feed container', function(done){
             expect($(".feed").length).toBe(1);
-            console.log($(".feed").length);
             done();
-
         });
     });
 
@@ -111,10 +113,21 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-    /* TODO: Write a new test suite named "New Feed Selection"
+    /* TODO: Write a new test suite named "New Feed Selection"*/
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+    /* TODO: Write a test that ensures when a new feed is loaded
+    * by the loadFeed function that the content actually changes.
+    * Remember, loadFeed() is asynchronous.
+    */
+
+    describe("New Feed Selection", function(){
+        beforeEach(function(done){
+            loadFeed(2,done);
+        });
+        it('Content changes when new feed is loaded', function(done){
+            expect($(".feed-list").children()[1].innerHTML.trim()).not.toBe('<a href="#" data-id="0">Udacity Blog</a>');
+            done();
+        });
+
+    });
 }());
