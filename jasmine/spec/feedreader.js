@@ -38,12 +38,11 @@ $(function() {
          it('Menu changes visibility when clicked.', function(){
             $(".menu-icon-link").trigger("click");
             //console.log(document.body.className);
-            expect(document.body.className).toBe("");
+            expect($('body').hasClass("menu-hidden")).not.toBeTruthy();
             $(".menu-icon-link").trigger("click");
             //console.log(document.body.className);
             expect($('body').hasClass("menu-hidden")).toBeTruthy();
          });
-
     });
 
 
@@ -63,8 +62,8 @@ $(function() {
         beforeEach(function(done){
             loadFeed(0,function(){
                initialFeed = $(".feed").html();
+               loadFeed(1, done);
             });
-            loadFeed(1, done());
         });
         it('Content changes when new feed is loaded', function(){
             expect($(".feed").html()).not.toBe(initialFeed);

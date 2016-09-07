@@ -11,21 +11,21 @@ page.
 
 ###RSS Feeds test suite:
 
-*Test for allFeeds definition and an array length that is greater than zero.
+* Test for allFeeds definition and an array length that is greater than zero.
 
-*Test to make sure each feed in the allFeeds object has defined URLs.
+* Test to make sure each feed in the allFeeds object has defined URLs.
 
-*Test to make sure each feed in the allFeeds object has defined names.
+* Test to make sure each feed in the allFeeds object has defined names.
 
 ###Menu test suite:
 
-*Makes sure menu is hidden by default.
+* Makes sure menu is hidden by default.
 
-*Checks for changes in visibility when menu icon is clicked.
+* Checks for changes in visibility when menu icon is clicked.
 
 
 ###Initial Entries test suite:
 
-*Makes sure at least a single entry is in the .feed container.
+* Makes sure at least a single entry is in the .feed container.
 
-*Checks for content changes when new feed is loaded.
+* Checks for content changes when new feed is loaded.
